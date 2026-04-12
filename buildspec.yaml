@@ -18,7 +18,7 @@ artifacts:
   files:
     - appspec.yml
     - dist/**/*
-    - script/**/*
+    - scripts/**/*
   discard-paths: no
     #- src/**/*
     #- package.json
