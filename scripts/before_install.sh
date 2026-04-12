@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Stopping Nginx if running..."
+echo "Stopping Apache if running..."
 systemctl stop httpd || true
 
 echo "Cleaning old files..."

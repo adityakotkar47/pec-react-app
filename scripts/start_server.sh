@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting Nginx..."
+echo "Starting Apache..."
 
 # Configure Apache
 systemctl restart httpd
