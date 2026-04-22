@@ -3,28 +3,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18.20.5
-   
+      nodejs: 18
     commands:
-        - npm install
-       
+      - echo "Installing dependencies..."
+      - npm install
   build:
     commands:
-        # run build script
-        - npm run build
-
+      - echo "Building the Vite React application..."
+      - npm run build
   post_build:
     commands:
-      - chmod +x scripts/*.sh
-     
+      - echo "Preparing artifacts for CodeDeploy..."
+      - cp appspec.yml dist/
+      - cp -r scripts dist/
+      - chmod +x dist/scripts/*.sh
 artifacts:
-  # include all files required to run the application
   files:
-    - appspec.yml
-    - dist/**/*
-    - scripts/**/*
-  discard-paths: no
-    #- src/**/*
-    #- package.json
-    #- appspec.yml
-    #- scripts/**/*
+    - '**/*'
+  base-directory: dist

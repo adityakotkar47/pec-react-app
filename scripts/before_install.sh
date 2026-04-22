@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "Stopping Apache if running..."
 systemctl stop httpd || true
 
